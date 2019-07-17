@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
 
+
 @Service
 public class UserBusinessServiceImpl implements UserBusinessService{
 
@@ -29,7 +30,7 @@ public class UserBusinessServiceImpl implements UserBusinessService{
         userDTOs = new TreeMap<>();
         for (User u: userAccess.getAllUsers().values()){
             UserDTO userDTO = new UserDTO(u.getLogin(),u.getPassword(),u.getName(),u.getAddress(),
-                    u.getPhoneNumber(),u.getScore(),u.getSale(),u.getRoles());
+                    u.getPhone(),u.getDiscount(),u.setDiscount(),u.isAdmin());
             userDTOs.put(userDTO.getLogin(), userDTO);
         }
     }
